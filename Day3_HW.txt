@@ -1,0 +1,70 @@
+1.Write a function to check whether a given number is a palindrome.
+2.Write a function to count the number of vowels in a string.
+3.Write a function to reverse a string.
+4.Write a function to check whether number is prime or not.
+5.Write a function to check whether a given number is divisible by 3 & 8.
+
+
+
+1.
+def palindrome(s):
+    if s == s[::-1]:
+        print("Palindrome")
+    else:
+        print("Not a palindrome")
+palindrome(input("Enter a string: "))
+
+
+
+2.
+def count(vowels, s):
+    count = 0
+    for char in s:
+        if char in vowels:
+            count += 1
+    return count
+vowels = "aeiouAEIOU"
+s = input("Enter a string: ")
+print(count(vowels, s))
+
+
+
+
+3.
+
+def rev(s):
+    for i in range(len(s)-1, -1, -1):
+        print(s[i], end="")
+s = input("Enter a string: ")
+rev(s)
+
+
+
+4.def primenumber(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+print("Prime number" if primenumber(int(input("Enter a number: "))) else "Not a prime number")
+
+
+
+
+5.
+
+def check_divisible(n):
+    if n % 3 == 0 and n % 8 == 0:
+        return "Divisible by 3 and 8"
+    else:
+        return "Not divisible by 3 and 8"
+
+num = 24
+print(check_divisible(num)) 
+
+
+
+
+
+
