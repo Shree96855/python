@@ -1,0 +1,109 @@
+1. Create a Circle class and calculate area.
+
+2. Create a Book class with title and author and display details.
+
+3. Create a Person class and a Student class that inherits from it.
+
+4. Create a School class with a class variable school_name and display it using a class method.
+
+5.Rectangle Area
+	Create a Rectangle class with:
+	length
+	breadth 
+        Create a method area() to calculate and print the area.
+
+6.Create Library management System application using class & Object and instance methods
+
+
+
+1.class circle:
+     def __init__(self,r):
+           self.r=r
+     def area(self):
+           return 3.14*self.r*self.r
+c=circle(float(input("Enter radius:")))
+print("Area of circle:",c.area())
+
+
+
+2.class book:
+    def __init__(self,title,author):
+        self.title=title
+        self.author=author
+    def display(self):
+        print("Title:",self.title)
+        print("Author:",self.author)
+b=book("Python Programming","John Doe")
+b.display()
+
+
+
+3.class person:
+    def skill(self):
+        print("I have many skills.")
+class student(person):
+    pass
+s=student()
+s.skill()
+
+
+
+4.class School:
+    school_name = "ABC School"
+
+    @classmethod
+    def display(cls):
+        print("School Name:", cls.school_name)
+
+School.display()
+
+
+5.class rectangle:
+    def __init__(self,length,breadth):
+        self.length = length
+        self.breadth = breadth
+    def area(self):
+        return self.length * self.breadth
+a = rectangle(int(input("enter length:")),int(input("enter breadth:")))
+print("area of rectangle:",a.area())
+
+
+6.class Library:
+    def __init__(self):
+        self.books = []
+
+    def add_book(self, book):
+        self.books.append(book)
+        print(book, "added successfully")
+
+    def remove_book(self, book):
+        if book in self.books:
+            self.books.remove(book)
+            print(book, "removed successfully")
+        else:
+            print("Book not found")
+
+    def display_books(self):
+        if len(self.books) == 0:
+            print("No books available")
+        else:
+            print("Available Books:")
+            for book in self.books:
+                print(book)
+
+# Create object
+lib = Library()
+
+# Add books
+lib.add_book("Python Programming")
+lib.add_book("Data Structures")
+lib.add_book("Machine Learning")
+
+# Display books
+lib.display_books()
+
+# Remove a book
+lib.remove_book("Data Structures")
+
+# Display books again
+lib.display_books()
