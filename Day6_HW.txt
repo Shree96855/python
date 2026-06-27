@@ -1,0 +1,103 @@
+1. Write a program to count the number of words in a text file.
+2. Create a class Vehicle with method start(). Override it in class Car.
+3. Write a program with multiple except blocks (ValueError and ZeroDivisionError).
+4. Write a program that raises a custom exception if marks are not between 0 and 100
+5. Write a program that raises a custom exception if a user enters a negative number
+6. Create a class Shape with method area(). Override it in classes Rectangle and Circle
+7. Write a program to count the number of vowels in a text file
+8. Write a program to write student details into a text file from csv file
+
+
+
+1.f=open("lala.txt","r")
+data = f.read()
+print(len(data.split()))
+f.close()
+
+2.
+class Vehicle:
+           def startoff(self):
+                  print("vehicle started")
+class Car:
+           def startoff(self):
+                  print("car started")
+c=Car()
+c.startoff()
+
+3.
+try:
+     a=int(input())
+     b=int(input())
+     c=a+b
+     print(c)
+except ValueError:
+     print("enter only numbers")
+except ZeroDivisionError:
+     print("division by 0 is not possible")
+
+4.
+class
+InvalidMarksError(Exception)
+        pass
+try:
+      marks=int(input))
+      if mark<0 or mark>100:
+          raise InvalidMarksError("mark should be between 0 to 100")
+     print("mark=",mark)
+except InvalidMarksError as e:
+     print(e)
+
+5.
+class
+NegativeNumberError(Exception)
+        pass
+
+try:
+     num=int(input())
+     if num<0:
+        raise NegativeNumberError(("num shouldn't be negative")
+    print("num",num)
+except NegativeNumberError as e:
+   print(e)
+
+6.
+class Shape:
+           def area(self)
+                 print("area of shape")
+class Rectangle(Shape):
+          def area(self):
+                l=int(input())
+                b=int(input())
+                print("area of rectangle:",l*b)
+class Circle(Shape):
+           def area(self):
+                  r=float(input())
+                  print("Area of circle:",3.14*r*r)
+rect=Rectangle()
+rect.area()
+cir=Circle()
+cir.area()
+
+7.
+f=open("lala.txt","r")
+data = f.read()
+count=0
+for ch in data:
+      if ch in "aeiouAEIOU":
+          count+=1
+print(count)
+f.close()
+
+8.
+import csv
+f=open("jeon.csv","r")
+f1=open("lala.txt","w")
+data=csv.reader(f)
+for row in data:
+     f1.write(" ".join(row)+"\n")
+f.close()
+f1.close()
+
+
+
+
