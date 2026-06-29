@@ -1,0 +1,102 @@
+enter n : 7
+
+      *
+     ***
+    *****
+   *******
+  *********
+ ***********
+*************
+ ***********
+  *********
+   *******
+    *****
+     ***
+      *
+
+
+--------------------------
+
+enter n :5
+    *
+   * *
+  *   *
+ *     *
+*********
+
+-----------------------------
+
+Enter no of rows: 6
+     *
+    **
+   ***
+  ****
+ *****
+******
+ *****
+  ****
+   ***
+    **
+     *
+
+---------------------------
+
+n=6
+     *
+    * *
+   *   *
+  *     *
+ *       *
+*         *
+ *       *
+  *     *
+   *   *
+    * *
+     *
+
+---------------------------
+
+1.n = int(input("Enter n: "))
+for i in range(1, n + 1):
+    print(" " * (n - i) + "*" * (2 * i - 1))
+
+for i in range(n - 1, 0, -1):
+    print(" " * (n - i) + "*" * (2 * i - 1))
+
+
+2.n = int(input("Enter n: "))
+
+for i in range(1, n + 1):
+    print(" " * (n - i), end="")
+
+    if i == 1:
+        print("*")
+    elif i == n:
+        print("*" * (2 * n - 1))
+    else:
+        print("*" + " " * (2 * i - 3) + "*")
+
+
+
+
+3.n = int(input("Enter no of rows: "))
+for i in range(1, n + 1):
+    print(" " * (n - i) + "*" * i)
+for i in range(n - 1, 0, -1):
+    print(" " * (n - i) + "*" * i)
+
+
+
+4.n = int(input("Enter n: "))
+for i in range(1, n + 1):
+    print(" " * (n - i), end="")
+    if i == 1:
+        print("*")
+    else:
+        print("*" + " " * (2 * i - 3) + "*")
+for i in range(n - 1, 0, -1):
+    print(" " * (n - i), end="")
+    if i == 1:
+        print("*")
+    else:
+        print("*" + " " * (2 * i - 3) + "*")
