@@ -1,0 +1,120 @@
+n=5
+
+
+----A
+---ABA
+--ABCBA
+-ABCDCBA
+ABCDEDCBA
+
+chr(65)->A
+
+------------------
+
+Leet code - 2469, 1822, 287, 1217, 1295
+
+
+
+
+
+n = 5
+
+for i in range(1, n + 1):
+    print(" " * (n - i), end="")
+
+    for j in range(i):
+        print(chr(65 + j), end="") 
+
+    for j in range(i - 2, -1, -1):
+        print(chr(65 + j), end="")
+
+    print()
+
+
+
+
+2469:
+
+class Solution(object):
+    def convertTemperature(self, celsius):
+        kelvin = celsius + 273.15
+        fahrenheit = celsius * 1.80 + 32.00
+        return [kelvin, fahrenheit]
+
+
+
+1822:
+
+class Solution(object):
+    def arraySign(self, nums):
+        negative = 0
+
+        for num in nums:
+            if num == 0:
+                return 0
+            if num < 0:
+                negative += 1
+
+        if negative % 2 == 0:
+            return 1
+        else:
+            return -1
+        
+
+287:
+
+
+class Solution:
+    def findDuplicate(self, nums):
+        slow = nums[0]
+        fast = nums[0]
+
+        while True:
+            slow = nums[slow]
+            fast = nums[nums[fast]]
+
+            if slow == fast:
+                break
+
+        slow = nums[0]
+
+        while slow != fast:
+            slow = nums[slow]
+            fast = nums[fast]
+
+        return slow
+
+
+
+
+1217:
+
+
+lass Solution:
+    def minCostToMoveChips(self, position):
+        odd = 0
+        even = 0
+
+        for p in position:
+            if p % 2 == 0:
+                even += 1
+            else:
+                odd += 1
+
+        return min(odd, even)
+
+
+
+1295:
+
+
+
+class Solution:
+    def findNumbers(self, nums):
+        count = 0
+
+        for num in nums:
+            if len(str(num)) % 2 == 0:
+                count += 1
+
+        return count
