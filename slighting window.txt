@@ -1,0 +1,59 @@
+arr= [2,1,5,1,3,2]
+k=3
+window_sum =sum(arr[:k])
+window_avg = sum(arr[:k])/k
+max_avg = window_avg
+for i in range(k,len(arr)):
+    window_sum = ((window_sum + arr[i])- arr[i-k])
+    window_avg = window_sum/k
+    max_avg = max(max_avg,window_avg)
+print(max_avg)
+
+
+a= [2,1,5,1,3,2]
+k=3
+count =0
+for i in a[:k]:
+    if i%2==0:
+        count+=1
+print(count,end="")
+for i in range(k,len(a)):
+    if a[i-k]%2==0:
+        count-=1
+    if a[i]%2==0:
+        count+=1
+    print(count,end="")
+
+
+
+arr = [1,2,1,0,1]
+k=4
+left =0
+window_sum = 0
+max_len = 0
+for right in range(len(arr)):
+    window_sum += arr[right]
+    while window_sum > k:
+        window_sum -= arr[left]
+        left+=1
+    max_len = max(max_len,right-left+1)
+print(max_len)
+
+
+s="rahul like python"
+vowels="aeiouAEIOU"
+c=0
+s=0
+ans=" "
+for i in range(0,s):
+    if(i in vowels):
+        c+=1
+        ans+=1
+        print("vowel:",c)
+    elif(i==" "):
+        s+=1
+        print("space:",s)
+    else:
+        print("consonants:")
+
+  

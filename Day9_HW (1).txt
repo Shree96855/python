@@ -1,0 +1,113 @@
+
+
+Leetcode - 3024,53,3232,3110,344,125
+
+
+3024
+
+class Solution(object):
+    def triangleType(self, nums):
+        nums.sort()
+        a, b, c = nums
+
+        if a + b <= c:
+            return "none"
+
+        if a == b == c:
+            return "equilateral"
+
+        if a == b or b == c or a == c:
+            return "isosceles"
+
+        return "scalene"
+
+
+53
+
+class Solution(object):
+    def maxSubArray(self, nums):
+        curr_sum = max_sum = nums[0]
+
+        for i in range(1, len(nums)):
+            curr_sum = max(nums[i], curr_sum + nums[i])
+            max_sum = max(max_sum, curr_sum)
+
+        return max_sum
+
+
+3232
+
+
+
+lass Solution(object):
+    def canAliceWin(self, nums):
+        total = sum(nums)
+
+        single_sum = 0
+        double_sum = 0
+
+        for num in nums:
+            if num < 10:
+                single_sum += num
+            else:
+                double_sum += num
+
+        if single_sum > total - single_sum:
+            return True
+            
+        if double_sum > total - double_sum:
+            return True
+
+        return False
+
+
+
+3110
+
+
+class Solution(object):
+    def scoreOfString(self, s):
+        score = 0
+
+        for i in range(1, len(s)):
+            score += abs(ord(s[i]) - ord(s[i - 1]))
+
+        return score
+
+
+344
+
+
+
+class Solution(object):
+    def reverseString(self, s):
+        left, right = 0, len(s) - 1
+
+        while left < right:
+            s[left], s[right] = s[right], s[left]
+            left += 1
+            right -= 1
+
+
+
+125
+
+
+class Solution(object):
+    def isPalindrome(self, s):
+        left, right = 0, len(s) - 1
+
+        while left < right:
+            while left < right and not s[left].isalnum():
+                left += 1
+            while left < right and not s[right].isalnum():
+                right -= 1
+
+            if s[left].lower() != s[right].lower():
+                return False
+
+            left += 1
+            right -= 1
+
+        return True
+
